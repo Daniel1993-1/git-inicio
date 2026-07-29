@@ -36,7 +36,7 @@ def buscar_producto():
                   nombre:{producto.get('nombre')},
                   cantidad:{producto.get('cantidad')},
                   precio:{producto.get('precio')}
-''')
+                ''')
             encontrado = True
             break
 

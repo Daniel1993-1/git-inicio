@@ -1,17 +1,15 @@
-nombre_archivo = 'mi_archivo_txt'
-try:
-    with open(nombre_archivo,'x') as archivo:
-        archivo.write('hola como estas modo exclusivo')
-        archivo.write('\nse agrega informacion al archivo\n')
-except FileExistsError as e:
-    print(f'el archivo {nombre_archivo} ya existe')
-    print(f'detalle del error {e}')
+class Snack:
+    contador_snack = 0
 
+    def __init__(self,nombre= '',precio = 0.0):
+        Snack.contador_snack += 1
+        self.id_snack = Snack.contador_snack
+        self.nombre = nombre
+        self.precio = precio
 
-with open(nombre_archivo,'a')as archivo:
-    archivo.write('anexando informacion..\n')
-    archivo.write('nueva informacion\n')
+    def __str__(self):
+        return (f'Snack: id_snack = {self.id_snack}, nombre = {self.nombre},'
+                f'precio = {self.precio}')
 
-
-with open(nombre_archivo,'r') as archivo:
-    print(archivo.read())
+    def escribir_snack(self):
+        return f'{self.id_snack},{self.nombre},{self.precio}'
